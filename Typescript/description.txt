@@ -1,0 +1,4 @@
+Learn about types in typescript. 
+Understanding of meaning interfaces and types. 
+Know how to define and do interface for parameters. 
+Understanding of the generic types.

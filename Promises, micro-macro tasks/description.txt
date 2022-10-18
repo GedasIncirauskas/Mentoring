@@ -1,0 +1,4 @@
+Learn about synchronies loop in JS. 
+Need to know how promises work. 
+Figured out magic behind setTimeout/setInterval
+

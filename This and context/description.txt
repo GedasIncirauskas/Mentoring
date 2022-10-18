@@ -1,0 +1,4 @@
+Need to learn about “this” in javascript. 
+Know how execution context work, and what “this” mean for the current context. 
+Know how to use binding functions and successfully use it in the code.	
+
