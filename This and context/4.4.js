@@ -89,4 +89,4 @@ let ladders = {
 ladders.up().up().down().showStep().down().showStep(); // shows 1 then 0
 
 This works because: when a function is called in the “method” syntax: object.method(), 
-the value of this during the call is object (return object).
+the value of this during the call is object (return object)
