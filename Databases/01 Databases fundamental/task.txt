@@ -1,0 +1,16 @@
+Analyze the “Bank” database model (see below). Perform the following tasks:
+1. Do you see any imperfections in its infological and datalogical levels? If yes, name them.
+
+* Office and Site page don't have relations with others tables
+* Account Owner should have Account ID to get relations between them
+* Status don't have Account ID, so they don't have relations.
+* Both Transaction don't have Account ID, so they don't have relations
+
+2. What questions do you want to ask the Customer to improve the models? Write down these
+questions.
+
+* Do you want to have office addresses where client have account?
+* Should user want to see in which offices it has accounts?
+* Do you want to see what accounts make transactions by owner per month?
+
+3. Try representing the “Bank” database model using graph and hierarchy schemas.
