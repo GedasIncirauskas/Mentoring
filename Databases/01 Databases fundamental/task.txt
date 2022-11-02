@@ -12,5 +12,6 @@ questions.
 * Do you want to have office addresses where client have account?
 * Should user want to see in which offices it has accounts?
 * Do you want to see what accounts make transactions by owner per month?
+* Account owner should have personal information (surname, address, ect)?
 
 3. Try representing the “Bank” database model using graph and hierarchy schemas.
