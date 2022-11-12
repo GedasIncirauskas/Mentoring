@@ -1,0 +1,47 @@
+1. What attributes are missing from existing relations? Add those missing attributes.
+2. What relations are missing from the database? Add those relations.
+    * added schema file Part 2-2task *
+
+3. Do all objects in the database follow unified naming conventions? Correct those violating the
+convention.
+    * No *
+
+4. Do all attributes in the database have optimal data types? Propose optimization.
+    * No *
+
+5. Do all relations in the database have optimal keys? If no, propose optimization.
+    * No *
+
+6. Are there redundant or missing relationships in the database? Make necessary corrections.
+    * don't need TRANSACTION (ARCHIVE) table, we have the same in TRANSACTION (OPERATIONAL) table *
+7. What cascade operations are necessary in this database? Make a list.
+    *
+    ON UPDATE:
+        account_id => transaction_operational_source
+        account_id => transaction_operational_destination
+        
+        account_id => transaction_archive_source
+        account_id => transaction_archive_destination
+
+        office_id => account_id 
+    ON UPDATE NO ACTION:
+    ON DELETE:
+        account_id => transaction_operational_source
+        account_id => transaction_operational_destination
+        
+        account_id => transaction_archive_source
+        account_id => transaction_archive_destination
+
+        account_id => office_id
+    ON DELETE NO ACTION:
+        account_id => office_id
+    ON DELETE SET DEFAULT:
+    ON DELETE SET NULL:
+  
+8. Can we increase performance using caching relations? If yes, add such relations.
+
+9. What indexes are missing from the database? Add all necessary indexes.
+    * PK is also index, so I added them *
+
+10. Update logical models in “CTECH DB 02 - Relations, Keys, Relationships, Indexes - task.eap” file,
+export your final models as SQL scripts and import in a real DBMSes (MS SQL Server and Oracle).
