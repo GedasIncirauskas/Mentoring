@@ -1,0 +1,60 @@
+1. Do you see any possibility for insert, update, delete data operation anomalies? Make the list of 
+such cases and correct the schema to avoid such anomalies.
+    *Data Operation Anomaly – incorrect data operation or unexpected side effect of data operation, 
+     resulting from inadequacy of the database to the subject area.
+
+     1. Insertion anomaly: if we create account we need account owner, status of account, office data. 
+     2. Deletion anomaly: in general is bad to delete something from database. If we will delete owner we will loose account, transaction data.
+     3. Modification anomaly: if we change site pages we could effect account data or owners name changed, so we should or not change data in others..
+
+2. Can we use “star” or “snowflake” schemas with this database to avoid some data operation 
+anomalies? Rework the schema, compare the new one to the original one and make the list of 
+the data operation anomalies that were eliminated and introduced.
+    * Yes we can.
+    * Make relationships for account and site page and offices
+
+3. Make the list of all functional dependencies in the database.
+    *Full functional dependency (we need have all values):
+    * For one account we have one owner
+    * For one owner we have one account and status
+    * For one office we can have one site page
+
+    *Partial functional dependency(we can omit field but still can get final result): 
+    * We could delete owner of account, but we could see account balance
+
+4. Are there relations having multi-values dependencies? If “yes”, how can we rework the schema 
+to avoid such dependencies?
+    * Yes, transaction tables, we can leave only one
+
+5. Does the schema violate any “normalization requirement”? If “yes”, rework the schema to avoid 
+such violations.
+    *Fundamental database requirements compliance: subject matter adequacy, performance, technical usability, data safety
+    * Primary keys minimality: think or PK is small/big enough
+    * Data storage non-redundancy: we can leave only one transaction table
+    * General database performance: add index to account, transaction, site pages tables
+    * Data consistency and integrity: connect offices and sites tables with account table
+
+6. Can you name some potential performance issues with the database? Make the list.
+    * Use indexes, database indexes let queries to efficiently retrieve data from a database.
+    * Bad querying, better executing many separate queries rather than combining them into a single query. 
+    * Check data types and choose a correct and good
+
+7. For each relation in the database detect what normal form it is in. Make the list.
+    * 1NF: owner and statuses
+    * 2NF: account and owner, account and site page, account and transactions, account and offices
+
+8. Are there relations in the higher normal form possible? Make the list.
+    * Boyce-Codd normal form possible for account and owners/account and transaction. Violation is that a relation has candidate keys intersection.
+
+9. Are there relations with possible yet unnecessary further normalization? Make the list.
+    * I don't see    
+
+10. Can we achieve some performance improvement with denormalization of the schema? Prove 
+your opinion.
+    * We can have only one transaction table instead of two.
+
+11. Can we achieve some performance improvement by adding caching relations to the schema? 
+Prove your opinion.
+    * Yes, we could save owner name at account table. It would be instantly accessible for query
+
+12. Add any missing comments to the database.
