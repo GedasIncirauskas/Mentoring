@@ -1,0 +1,39 @@
+1. Analyze the “Bank” database model (see below). Perform the following tasks:
+    a. Create a list of views to be added to the database along with a sub-list of tasks
+    performed by each view. Create that views.
+
+    b. Create a list of checks to be added to the database along with a sub-list of tasks
+    performed by each check. Create that checks.
+
+    Account:
+        Check that the balance is never negative.
+        Check that the account owner exists in the "Account owner" table.
+        Check that the "system account" flag is either 0 or 1.
+    Status:
+        Check that the "id" is unique for each status.
+        Check that the "name" is unique for each status.
+    Transaction operational and Transaction archive:
+        Check that the "source account" and "destination account" exist in the "Account" table.
+        Check that the "sum" is positive.
+        Check that the "date and time" is not in the future.
+    Account owner:
+        Check that the "id" is unique for each account owner.
+        Check that the "name" is unique for each account owner.
+    Site page:
+        Check that the "id" is unique for each page.
+        Check that the "parent page" exists in the "Site page" table.
+        Check that the "name" is unique for each page.
+    Office:
+        Check that the "id" is unique for each office.
+        Check that the "city" is not null.
+        Check that the "name" is unique for each office.
+        Check that the "total sells sum" is non-negative.
+
+    c. Create a list of triggers to be added to the database along with a sub-list of tasks
+    performed by each trigger. Create that triggers.
+   
+
+    d. Create a list of stored routines to be added to the database along with a sub-list of tasks
+    performed by each routine. Create that routines
+
+    
